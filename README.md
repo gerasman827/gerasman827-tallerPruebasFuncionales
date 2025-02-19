@@ -1,4 +1,4 @@
-#Actividad 2: Proyecto de Análisis y Solución de Problemas en Historias de Usuario y Pruebas de Aceptación ATDD, BDD y TDD.
+Actividad 2: Proyecto de Análisis y Solución de Problemas en Historias de Usuario y Pruebas de Aceptación ATDD, BDD y TDD.
 
 Indicador de desempeño 
 Implementar enfoques prácticos como BDD, TDD y ATDD para optimizar el ciclo de vida del software, enfocándose en la creación de escenarios de prueba en el formato adecuado, estableciendo una base sólida para la automatización futura con herramientas y frameworks apropiados.
