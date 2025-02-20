@@ -23,7 +23,6 @@ describe('Ver el carrito de compras', () => {
     test('Debe poder ver el listado de los elementos agregados al carrito', () => {
         const productos = JSON.parse(tienda.verCarrito());
         expect(productos.length).toBeGreaterThan(0);
-        console.log(productos);
         
         productos.forEach((producto) => {
             expect(producto).toHaveProperty('producto');
@@ -40,5 +39,12 @@ describe('Ver el carrito de compras', () => {
         
         expect(totalCompra).toBe(TOTAL_PRODUCTOS_AGREGADOS);
     });
+
+    test('Debe persistir los productos agregados al carrito aún cuando navegue hacia el home de productos', () => {
+        const productos = JSON.parse(tienda.verCarrito());
+        const navegacioHomeProductos = tienda.verProductosTienda();
+        const verNuevamenteCarrito = JSON.parse(tienda.verCarrito());
+        expect(verNuevamenteCarrito).toEqual(productos);
+    })
     
 })

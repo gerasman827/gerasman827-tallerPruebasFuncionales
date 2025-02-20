@@ -34,6 +34,23 @@ class Cart {
         return true;
     }
 
+    sumarCantidadProductoEnCarrito(productoId, cantidad) {
+            
+        if (!this.#productos.has(productoId)) return false;
+
+        const item = this.#productos.get(productoId);
+        
+        if (cantidad > item.cantidad) {
+            return null;
+        } else {
+            item.cantidad += cantidad;
+        }
+
+        item.producto.disminuirStockProducto(cantidad);
+        return true;
+    }
+
+
     verCarrito() {
         return JSON.stringify(
             Array.from(this.#productos.values()).map(({ producto, cantidad }) => {
@@ -60,6 +77,7 @@ class Cart {
 
     vaciarCarrito() {
         this.#productos.clear();
+        
     }
 }
 

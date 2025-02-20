@@ -16,6 +16,7 @@ class Producto {
 
     getInfo() {
         return {
+            productoId: this.#id,
             producto: this.#name,
             categoria: this.#categoria,
             precio: this.#precio,
