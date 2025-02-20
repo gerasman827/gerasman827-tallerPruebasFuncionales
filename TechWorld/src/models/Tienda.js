@@ -33,6 +33,10 @@ class Tienda {
         return this.carritoCompras.verCarrito();
     }
 
+    calcularTotalCarrito() {
+        return this.carritoCompras.calcularTotalCarrito()
+    }
+
     eliminarProductoCarrito(id, cantidad) {
         return this.carritoCompras.eliminarProducto(id, cantidad);
     }

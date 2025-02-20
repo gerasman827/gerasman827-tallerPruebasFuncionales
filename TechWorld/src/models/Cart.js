@@ -35,11 +35,28 @@ class Cart {
     }
 
     verCarrito() {
-        return Array.from(this.#productos.values()).map(
-            ({ producto, cantidad }) =>
-                `${producto.getInfo()} | Cantidad en carrito: ${cantidad}`
+        return JSON.stringify(
+            Array.from(this.#productos.values()).map(({ producto, cantidad }) => {
+                let info = producto.getInfo(); 
+                return {
+                    ...info,
+                    cantidad: cantidad
+                };
+            }),
+            null,
+            2
         );
     }
+
+    calcularTotalCarrito() {
+        return Array.from(this.#productos.values()).reduce((total, { producto, cantidad }) => {
+            return total + producto.getPrecio() * cantidad;
+        }, 0);
+    }
+    
+    
+    
+    
 
     vaciarCarrito() {
         this.#productos.clear();

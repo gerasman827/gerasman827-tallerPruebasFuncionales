@@ -15,8 +15,16 @@ class Producto {
     }
 
     getInfo() {
-        return `Producto: ${this.#name} | Categoría: ${this.#categoria} | Precio: $${this.#precio} | Stock: ${this.#stock}`;
+        return {
+            producto: this.#name,
+            categoria: this.#categoria,
+            precio: this.#precio,
+            stock: this.#stock
+        };
     }
+    
+    
+    
 
     getId() {
         return this.#id;
