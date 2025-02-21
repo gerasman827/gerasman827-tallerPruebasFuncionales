@@ -18,12 +18,22 @@ describe('Modificar el carrito de compras', () => {
 
         tienda.adicionarProductoCarrito(1, 2)
         tienda.adicionarProductoCarrito(2, 2)
+        tienda.adicionarProductoCarrito(3, 2)
     })
 
     test('No debe permitir modificar la cantidad de un producto por una cantidad inválida', () => {    
-        const cantidadAumetar = -1;
+        const cantidadAumetar = 10000;
         const resp = tienda.sumarCantidadProductoEnCarrito(1,cantidadAumetar);           
         expect(resp).toEqual(null);        
+    })
+
+    test('Debe permitir eliminar un producto del carrito', () =>{
+        const existeProducto = tienda.buscarProductoEnTiendaPorId(2)
+        if(existeProducto)  {
+            const productoEliminado = tienda.eliminarProductoCarrito(existeProducto.getId())
+            expect(productoEliminado).toBe(true)
+        }
+        
     })
 
     test('Debe permitir vaciar el carrito', () => {        

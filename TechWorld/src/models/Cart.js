@@ -20,14 +20,15 @@ class Cart {
         return true;
     }
 
-    eliminarProducto(productoId, cantidad) {
+    eliminarProducto(productoId) {
         if (!this.#productos.has(productoId)) return false;
 
         const item = this.#productos.get(productoId);
-        if (cantidad >= item.cantidad) {
+        if (item) {
             this.#productos.delete(productoId);
+            return true
         } else {
-            item.cantidad -= cantidad;
+            return false
         }
 
         item.producto.aumentarStockProducto(cantidad);
