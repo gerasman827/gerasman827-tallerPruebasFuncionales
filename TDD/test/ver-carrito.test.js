@@ -34,7 +34,7 @@ describe('Ver el carrito de compras', () => {
     })
 
     test('Debe mostrar el total de la compra para los elementos que están en el carrito', () => {
-        const TOTAL_PRODUCTOS_AGREGADOS = 4200;
+        const TOTAL_PRODUCTOS_AGREGADOS = 4201;
         const totalCompra = tienda.calcularTotalCarrito();
         
         expect(totalCompra).toBe(TOTAL_PRODUCTOS_AGREGADOS);

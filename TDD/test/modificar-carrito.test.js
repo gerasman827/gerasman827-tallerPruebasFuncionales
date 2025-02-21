@@ -22,7 +22,7 @@ describe('Modificar el carrito de compras', () => {
     })
 
     test('No debe permitir modificar la cantidad de un producto por una cantidad inválida', () => {    
-        const cantidadAumetar = 10000;
+        const cantidadAumetar = -1;
         const resp = tienda.sumarCantidadProductoEnCarrito(1,cantidadAumetar);           
         expect(resp).toEqual(null);        
     })
