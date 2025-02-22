@@ -21,10 +21,10 @@ describe('Modificar el carrito de compras', () => {
         tienda.adicionarProductoCarrito(3, 2)
     })
 
-    test('No debe permitir modificar la cantidad de un producto por una cantidad inválida', () => {    
-        const cantidadAumetar = -1;
-        const resp = tienda.sumarCantidadProductoEnCarrito(1,cantidadAumetar);           
-        expect(resp).toEqual(null);        
+    test('No debe permitir modificar la cantidad de un producto por una cantidad inválida', () => {
+        const cantidadAumentar = -1;
+        const resp = tienda.sumarCantidadProductoEnCarrito(1,cantidadAumentar);
+        expect(resp).toEqual(null);
     })
 
     test('Debe permitir eliminar un producto del carrito', () =>{
@@ -33,13 +33,13 @@ describe('Modificar el carrito de compras', () => {
             const productoEliminado = tienda.eliminarProductoCarrito(existeProducto.getId())
             expect(productoEliminado).toBe(true)
         }
-        
+
     })
 
-    test('Debe permitir vaciar el carrito', () => {        
+    test('Debe permitir vaciar el carrito', () => {
         const cantProductos = JSON.parse(tienda.verCarrito());
         expect(cantProductos.length).toBe(2)
         const vaciarCarrito = tienda.vaciarCarrito();
-       expect(vaciarCarrito).toEqual(undefined);        
+       expect(vaciarCarrito).toEqual(undefined);
     })
 })
