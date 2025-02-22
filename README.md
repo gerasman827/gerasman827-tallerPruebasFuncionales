@@ -1,6 +1,7 @@
 Actividad 2: Proyecto de Análisis y Solución de Problemas en Historias de Usuario y Pruebas de Aceptación ATDD, BDD y TDD.
 
 ATDD
+
 npx cucumber-js
 
 3 scenarios (1 failed, 2 passed)
