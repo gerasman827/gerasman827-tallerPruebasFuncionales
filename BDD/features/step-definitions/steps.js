@@ -2,8 +2,8 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 const assert = require('assert');
 
 
-let productos = 0; // Contador de productos en el carrito
-let carrito = {}; // Objeto para almacenar productos y cantidades
+let productos = 0;
+let carrito = {};
 
 
 // Escenario 1: Agregar un producto al carrito
